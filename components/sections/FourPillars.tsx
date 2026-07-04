@@ -47,8 +47,8 @@ export function FourPillars() {
               },
             }}
           >
-            <div className="flex min-w-max snap-x snap-mandatory gap-0 lg:grid lg:min-w-0 lg:grid-cols-4 lg:overflow-hidden lg:rounded-3xl">
-            {fourPillars.pillars.map((pillar, index) => (
+            <div className="flex min-w-max snap-x snap-mandatory gap-4 px-4 sm:gap-5 lg:grid lg:min-w-0 lg:grid-cols-4 lg:gap-6 lg:px-0">
+            {fourPillars.pillars.map((pillar) => (
               <motion.div
                 key={pillar.title}
                 className="w-[220px] shrink-0 snap-start sm:w-[240px] lg:w-auto lg:min-w-0"
@@ -75,13 +75,7 @@ export function FourPillars() {
                 <CursorZone variant="click" className="h-full">
                   <button
                     type="button"
-                    className={`group relative h-[480px] w-full overflow-hidden text-left sm:h-[520px] lg:h-[560px] ${
-                      index === 0
-                        ? "rounded-l-3xl lg:rounded-none"
-                        : index === fourPillars.pillars.length - 1
-                          ? "rounded-r-3xl lg:rounded-none"
-                          : ""
-                    } ${index > 0 ? "border-l border-white/15" : ""}`}
+                    className="group relative h-[480px] w-full overflow-hidden rounded-3xl text-left sm:h-[520px] lg:h-[560px]"
                     onClick={() => setActivePillar(pillar)}
                   >
                     <Image
@@ -93,15 +87,23 @@ export function FourPillars() {
                     />
 
                     <div
-                      className="pointer-events-none absolute inset-x-0 top-0 h-2/5 bg-linear-to-b from-ink/55 to-transparent"
+                      className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-linear-to-b from-ink/55 to-transparent"
                       aria-hidden
                     />
 
-                    <div className="absolute inset-x-0 top-0 z-10 px-4 pt-5 pb-3 sm:px-5 sm:pt-6 lg:px-6">
+                    <div
+                      className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-ink/65 to-transparent"
+                      aria-hidden
+                    />
+
+                    <div className="absolute inset-x-0 top-0 z-10 px-4 pt-5 sm:px-5 sm:pt-6 lg:px-6">
                       <h3 className="font-display text-lg font-medium tracking-tight text-white drop-shadow-[0_1px_8px_rgb(10_14_39_/_0.45)] sm:text-xl lg:text-2xl">
                         {pillar.title}
                       </h3>
-                      <p className="mt-2 text-[12px] leading-relaxed text-white/90 drop-shadow-[0_1px_6px_rgb(10_14_39_/_0.4)] sm:text-[13px]">
+                    </div>
+
+                    <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-5 sm:px-5 sm:pb-6 lg:px-6">
+                      <p className="text-[12px] leading-relaxed text-white/90 drop-shadow-[0_1px_6px_rgb(10_14_39_/_0.4)] sm:text-[13px]">
                         {pillar.cardSummary}
                       </p>
                     </div>
