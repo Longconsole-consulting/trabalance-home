@@ -600,9 +600,27 @@ export const theShift = {
     tabs: ["Overview", "Movement", "Adjustments"] as const,
     defaultTab: "Movement" as const,
     kpis: [
-      { id: "onHand", label: "On hand", value: 400, display: "400", accent: "neutral" as const },
-      { id: "value", label: "Value", value: 5000, display: "£5,000", accent: "violet" as const },
-      { id: "sold", label: "Sold", value: 95, display: "95", accent: "primary" as const },
+      {
+        id: "onHand",
+        label: "On hand",
+        value: 400,
+        display: "400",
+        accent: "neutral" as const,
+      },
+      {
+        id: "value",
+        label: "Value",
+        value: 5000,
+        display: "£5,000",
+        accent: "violet" as const,
+      },
+      {
+        id: "sold",
+        label: "Sold",
+        value: 95,
+        display: "95",
+        accent: "primary" as const,
+      },
     ],
     movementRows: [
       {
@@ -645,7 +663,12 @@ export const theShift = {
     ],
     adjustmentRows: [
       { id: "a1", date: "12 Jun", reason: "Stock count correction", qty: "+5" },
-      { id: "a2", date: "10 Jun", reason: "Damaged goods write-off", qty: "-3" },
+      {
+        id: "a2",
+        date: "10 Jun",
+        reason: "Damaged goods write-off",
+        qty: "-3",
+      },
     ],
   },
 };
