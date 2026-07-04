@@ -21,7 +21,7 @@ export function FourPillars() {
 
   return (
     <SectionCursor variant="explore">
-      <Section background="cream" mesh fullBleed>
+      <Section background="surface" fullBleed>
         <FullBleed>
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-medium tracking-wide text-primary uppercase">
@@ -36,37 +36,36 @@ export function FourPillars() {
           </Reveal>
 
           <motion.div
-            className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-4 sm:gap-5 lg:mt-16 lg:max-w-5xl lg:gap-6"
+            className="mx-auto mt-12 max-w-7xl overflow-x-auto lg:mt-16 lg:overflow-hidden"
             initial={prefersReducedMotion ? false : "hidden"}
             whileInView={prefersReducedMotion ? undefined : "visible"}
             viewport={{ once: true, margin: "-80px" }}
             variants={{
               hidden: {},
               visible: {
-                transition: { staggerChildren: 0.12, delayChildren: 0.05 },
+                transition: { staggerChildren: 0.1, delayChildren: 0.05 },
               },
             }}
           >
+            <div className="flex min-w-max snap-x snap-mandatory gap-0 lg:grid lg:min-w-0 lg:grid-cols-4 lg:overflow-hidden lg:rounded-3xl">
             {fourPillars.pillars.map((pillar, index) => (
               <motion.div
                 key={pillar.title}
-                className="min-w-0"
+                className="w-[220px] shrink-0 snap-start sm:w-[240px] lg:w-auto lg:min-w-0"
                 variants={
                   prefersReducedMotion
                     ? undefined
                     : {
                         hidden: {
                           opacity: 0,
-                          y: 56,
-                          scale: 0.88,
-                          rotate: index % 2 === 0 ? -2 : 2,
-                          filter: "blur(10px)",
+                          y: 48,
+                          scale: 0.94,
+                          filter: "blur(8px)",
                         },
                         visible: {
                           opacity: 1,
                           y: 0,
                           scale: 1,
-                          rotate: 0,
                           filter: "blur(0px)",
                           transition: cardSpring,
                         },
@@ -76,7 +75,13 @@ export function FourPillars() {
                 <CursorZone variant="click" className="h-full">
                   <button
                     type="button"
-                    className="group relative aspect-[3/4] w-full overflow-hidden rounded-3xl text-left"
+                    className={`group relative h-[480px] w-full overflow-hidden text-left sm:h-[520px] lg:h-[560px] ${
+                      index === 0
+                        ? "rounded-l-3xl lg:rounded-none"
+                        : index === fourPillars.pillars.length - 1
+                          ? "rounded-r-3xl lg:rounded-none"
+                          : ""
+                    } ${index > 0 ? "border-l border-white/15" : ""}`}
                     onClick={() => setActivePillar(pillar)}
                   >
                     <Image
@@ -84,7 +89,7 @@ export function FourPillars() {
                       alt={pillar.media.alt}
                       fill
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                      sizes="(max-width: 1024px) 50vw, 480px"
+                      sizes="(max-width: 1024px) 240px, 25vw"
                     />
 
                     <div
@@ -92,11 +97,11 @@ export function FourPillars() {
                       aria-hidden
                     />
 
-                    <div className="absolute inset-x-0 top-0 z-10 px-5 pt-5 pb-3 sm:px-6 sm:pt-6">
-                      <h3 className="font-display text-xl font-medium tracking-tight text-white drop-shadow-[0_1px_8px_rgb(10_14_39_/_0.45)] sm:text-2xl">
+                    <div className="absolute inset-x-0 top-0 z-10 px-4 pt-5 pb-3 sm:px-5 sm:pt-6 lg:px-6">
+                      <h3 className="font-display text-lg font-medium tracking-tight text-white drop-shadow-[0_1px_8px_rgb(10_14_39_/_0.45)] sm:text-xl lg:text-2xl">
                         {pillar.title}
                       </h3>
-                      <p className="mt-2 text-[13px] leading-relaxed text-white/90 drop-shadow-[0_1px_6px_rgb(10_14_39_/_0.4)] sm:text-sm">
+                      <p className="mt-2 text-[12px] leading-relaxed text-white/90 drop-shadow-[0_1px_6px_rgb(10_14_39_/_0.4)] sm:text-[13px]">
                         {pillar.cardSummary}
                       </p>
                     </div>
@@ -104,6 +109,7 @@ export function FourPillars() {
                 </CursorZone>
               </motion.div>
             ))}
+            </div>
           </motion.div>
         </FullBleed>
       </Section>

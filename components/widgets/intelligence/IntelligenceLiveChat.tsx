@@ -189,7 +189,7 @@ export const IntelligenceLiveChat = forwardRef<
 
   const footer = introComplete ? (
     <form onSubmit={handleSubmit}>
-      <div className="flex items-center gap-2 rounded-2xl border border-rule bg-surface-2 px-3 py-2">
+      <div className="flex items-center gap-2 rounded-2xl border border-rule bg-surface px-3 py-2">
         <input
           type="text"
           value={draft}

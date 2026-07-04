@@ -18,7 +18,7 @@ export function IntelligenceChatFrame({
   return (
     <div className={`mx-auto w-full max-w-[380px] sm:max-w-[400px] ${className}`}>
       <div className="rounded-[2.75rem] border border-ink/10 bg-ink/5 p-2 shadow-soft-lg">
-        <div className="flex flex-col overflow-hidden rounded-[2.25rem] border border-rule bg-surface-2">
+        <div className="flex flex-col overflow-hidden rounded-[2.25rem] border border-rule bg-surface">
           <div className="relative shrink-0 bg-ink px-5 pb-4 pt-5">
             <div className="mb-3 flex items-center justify-center gap-1.5">
               <span className="h-1 w-8 rounded-full bg-white/15" />
@@ -35,7 +35,7 @@ export function IntelligenceChatFrame({
             </div>
           </div>
 
-          <div className="flex min-h-[420px] flex-1 flex-col bg-surface-2">{children}</div>
+          <div className="flex min-h-[420px] flex-1 flex-col bg-surface">{children}</div>
 
           {footer ? (
             <div className="shrink-0 border-t border-rule bg-surface px-4 py-3">{footer}</div>
