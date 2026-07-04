@@ -427,6 +427,8 @@ export const theShift = {
       "One real double-entry ledger — trial balance correct every second of every day",
       "The intelligence layer reads it all and tells you what to do next",
     ],
+    cta: "Book a Demo",
+    ctaHref: "#demo",
   },
   oldWayVisual: {
     nodes: [
@@ -813,6 +815,8 @@ export const whyTrabalance = {
       },
     },
   ],
+  cta: "See demo",
+  ctaHref: "#demo",
 };
 
 export const trustedBy = {

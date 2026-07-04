@@ -1,5 +1,7 @@
 "use client";
 
+import { Magnetic } from "@/components/interaction/Magnetic";
+import { Button } from "@/components/ui/Button";
 import { theShift } from "@/lib/content/homepage";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
@@ -53,47 +55,60 @@ export function ComparisonWidget({
         </button>
       </div>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={mode}
-          initial={{ opacity: 0, x: mode === "old" ? -20 : 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          exit={{ opacity: 0, x: mode === "old" ? 20 : -20 }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <h3 className="flex items-center gap-2 text-sm font-medium uppercase tracking-wide">
-            {mode === "old" ? (
-              <>
-                <X size={16} className="text-red-400" />
-                <span className="text-ink-faint">{theShift.problem.title}</span>
-              </>
-            ) : (
-              <>
-                <Check size={16} className="text-primary" />
-                <span className="text-primary">{theShift.solution.title}</span>
-              </>
+      <div className="flex min-h-0 flex-1 flex-col">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={mode}
+            className="flex flex-1 flex-col"
+            initial={{ opacity: 0, x: mode === "old" ? -20 : 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: mode === "old" ? 20 : -20 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <h3 className="flex items-center gap-2 text-sm font-medium uppercase tracking-wide">
+              {mode === "old" ? (
+                <>
+                  <X size={16} className="text-red-400" />
+                  <span className="text-ink-faint">{theShift.problem.title}</span>
+                </>
+              ) : (
+                <>
+                  <Check size={16} className="text-primary" />
+                  <span className="text-primary">{theShift.solution.title}</span>
+                </>
+              )}
+            </h3>
+            <ul className="mt-6 space-y-4">
+              {(mode === "old"
+                ? theShift.problem.points
+                : theShift.solution.points
+              ).map((point) => (
+                <li
+                  key={point}
+                  className="flex gap-3 text-[15px] leading-relaxed text-ink-mid md:text-[17px]"
+                >
+                  <span
+                    className={`mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full ${
+                      mode === "old" ? "bg-ink-fainter" : "bg-primary"
+                    }`}
+                  />
+                  {point}
+                </li>
+              ))}
+            </ul>
+
+            {mode === "new" && (
+              <div className="mt-auto pt-8">
+                <Magnetic>
+                  <Button href={theShift.solution.ctaHref} size="lg" showChevron>
+                    {theShift.solution.cta}
+                  </Button>
+                </Magnetic>
+              </div>
             )}
-          </h3>
-          <ul className="mt-6 space-y-4">
-            {(mode === "old"
-              ? theShift.problem.points
-              : theShift.solution.points
-            ).map((point) => (
-              <li
-                key={point}
-                className="flex gap-3 text-[15px] leading-relaxed text-ink-mid md:text-[17px]"
-              >
-                <span
-                  className={`mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full ${
-                    mode === "old" ? "bg-ink-fainter" : "bg-primary"
-                  }`}
-                />
-                {point}
-              </li>
-            ))}
-          </ul>
-        </motion.div>
-      </AnimatePresence>
+          </motion.div>
+        </AnimatePresence>
+      </div>
     </div>
   );
 }

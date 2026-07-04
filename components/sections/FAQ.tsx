@@ -14,7 +14,7 @@ export function FAQ() {
 
   return (
     <SectionCursor>
-      <Section id="pricing" background="cream" mesh fullBleed>
+      <Section id="pricing" background="surface" fullBleed className="border-t mt-1 border-rule">
         <FullBleed>
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-medium tracking-wide text-primary uppercase">
@@ -25,7 +25,7 @@ export function FAQ() {
             </h2>
           </Reveal>
 
-          <div className="mx-auto mt-16 max-w-3xl divide-y divide-rule">
+          <div className="mx-auto mt-16 max-w-3xl">
             {faq.items.map((item, index) => {
               const isOpen = openIndex === index;
               return (

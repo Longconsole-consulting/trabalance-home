@@ -1,4 +1,6 @@
+import { Magnetic } from "@/components/interaction/Magnetic";
 import { SectionCursor } from "@/components/interaction/SectionCursor";
+import { Button } from "@/components/ui/Button";
 import { FullBleed } from "@/components/ui/FullBleed";
 import { Reveal, RevealItem, RevealStagger } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
@@ -101,6 +103,14 @@ export function WhyTrabalance() {
               />
             </RevealItem>
           </RevealStagger>
+
+          <Reveal className="mt-12 flex justify-center md:mt-16">
+            <Magnetic>
+              <Button href={whyTrabalance.ctaHref} size="lg" showChevron>
+                {whyTrabalance.cta}
+              </Button>
+            </Magnetic>
+          </Reveal>
         </FullBleed>
       </Section>
     </SectionCursor>

@@ -15,6 +15,7 @@ interface SectionProps {
   className?: string;
   mesh?: boolean;
   fullBleed?: boolean;
+  overlay?: ReactNode;
   children: ReactNode;
 }
 
@@ -34,6 +35,7 @@ export function Section({
   className = "",
   mesh = false,
   fullBleed = false,
+  overlay,
   children,
 }: SectionProps) {
   return (
@@ -41,13 +43,16 @@ export function Section({
       id={id}
       className={`relative py-32 md:py-44 lg:py-52 ${backgrounds[background]} ${className}`}
     >
+      {overlay}
       {mesh && background !== "hero" && (
         <div className="pointer-events-none absolute inset-0 bg-mesh-primary" aria-hidden />
       )}
       {mesh && background === "hero" && (
         <div className="pointer-events-none absolute inset-0 bg-mesh-hero" aria-hidden />
       )}
-      <div className={`relative ${fullBleed ? "w-full" : ""}`}>{children}</div>
+      <div className={`relative ${overlay ? "z-10" : ""} ${fullBleed ? "w-full" : ""}`}>
+        {children}
+      </div>
     </section>
   );
 }
