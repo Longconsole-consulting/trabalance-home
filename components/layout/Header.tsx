@@ -12,7 +12,6 @@ import { headerCta, navMenu, signInLink } from "@/lib/content/homepage";
 import {
   motion,
   useMotionTemplate,
-  useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";
@@ -25,19 +24,14 @@ const SCROLL_RANGE = 180;
 export function Header() {
   const { scrollY } = useScroll();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const dropdown = useNavDropdown();
-
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 80);
-  });
 
   const bgOpacity = useTransform(scrollY, [0, SCROLL_RANGE], [0, 0.92]);
   const borderOpacity = useTransform(scrollY, [0, SCROLL_RANGE], [0, 1]);
   const shadowOpacity = useTransform(scrollY, [0, SCROLL_RANGE], [0, 0.06]);
-  const logoColor = useTransform(scrollY, [0, SCROLL_RANGE], ["#ffffff", "#0a0e27"]);
-  const linkColor = useTransform(scrollY, [0, SCROLL_RANGE], ["#ffffffcc", "#475569"]);
-  const iconColor = useTransform(scrollY, [0, SCROLL_RANGE], ["#ffffff", "#0a0e27"]);
+  const logoColor = useTransform(scrollY, [0, SCROLL_RANGE], ["#0a0e27", "#0a0e27"]);
+  const linkColor = useTransform(scrollY, [0, SCROLL_RANGE], ["#475569", "#475569"]);
+  const iconColor = useTransform(scrollY, [0, SCROLL_RANGE], ["#0a0e27", "#0a0e27"]);
 
   const backgroundColor = useMotionTemplate`rgba(255, 255, 255, ${bgOpacity})`;
   const borderColor = useMotionTemplate`rgba(232, 227, 215, ${borderOpacity})`;
@@ -124,7 +118,7 @@ export function Header() {
             <Button
               href={signInLink.href}
               size="md"
-              variant={isScrolled ? "outline-light" : "outline"}
+              variant="outline-light"
             >
               {signInLink.label}
             </Button>

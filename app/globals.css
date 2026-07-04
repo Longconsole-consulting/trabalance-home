@@ -175,6 +175,12 @@ body.custom-cursor-active button {
   background-size: 14px 14px;
 }
 
+.bg-dot-grid-white {
+  background-color: var(--c-surface);
+  background-image: radial-gradient(circle, var(--c-rule) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
 .font-display {
   font-family: var(--font-newsreader), Georgia, serif;
 }

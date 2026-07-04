@@ -28,7 +28,7 @@ export default function Home() {
           <HowItWorks />
           <IntelligenceLayer />
           <CustomerSpotlight />
-          <WhyTrabalance />
+          {/* <WhyTrabalance /> */}
           <TrustedBy />
 
           <FeatureStrip />

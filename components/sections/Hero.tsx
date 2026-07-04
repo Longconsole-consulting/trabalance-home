@@ -15,8 +15,7 @@ export function Hero() {
   return (
     <SectionCursor>
       <Section
-        background="hero"
-        mesh
+        background="surface"
         fullBleed
         className="!pb-8 !pt-[calc(7rem+var(--site-banner-height,0px))] md:!pb-10 md:!pt-[calc(9.5rem+var(--site-banner-height,0px))]"
       >
@@ -28,15 +27,15 @@ export function Hero() {
               <JitterText
                 as="h1"
                 text={hero.headline}
-                className="font-display text-4xl leading-[1.05] font-medium tracking-tight text-white md:text-5xl lg:text-[2.75rem]"
+                className="font-display text-4xl leading-[1.05] font-medium tracking-tight text-ink md:text-5xl lg:text-[2.75rem]"
               />
               <Reveal variant="fadeUp" delay={0.05}>
-                <p className="mt-5 text-[17px] leading-relaxed text-white/70 lg:text-base">
+                <p className="mt-5 text-[17px] leading-relaxed text-ink-mid lg:text-base">
                   {hero.subhead}
                 </p>
               </Reveal>
               <Reveal variant="fadeUp" delay={0.1}>
-                <p className="mt-4 text-sm text-white/40">{eyebrowLine}</p>
+                <p className="mt-4 text-sm text-ink-faint">{eyebrowLine}</p>
               </Reveal>
               <Reveal variant="fadeUp" delay={0.15}>
                 <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -45,7 +44,7 @@ export function Hero() {
                       {hero.cta}
                     </Button>
                   </Magnetic>
-                  <Button href={hero.secondaryHref} size="lg" variant="outline">
+                  <Button href={hero.secondaryHref} size="lg" variant="outline-light">
                     {hero.secondaryCta}
                   </Button>
                 </div>
