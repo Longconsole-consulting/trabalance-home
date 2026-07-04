@@ -7,12 +7,14 @@ interface TiltCardProps {
   children: ReactNode;
   className?: string;
   maxTilt?: number;
+  hoverShadow?: boolean;
 }
 
 export function TiltCard({
   children,
   className = "",
   maxTilt = 6,
+  hoverShadow = true,
 }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
@@ -38,7 +40,7 @@ export function TiltCard({
   return (
     <motion.div
       ref={ref}
-      className={`transition-shadow duration-300 hover:shadow-soft-lg ${className}`}
+      className={`${hoverShadow ? "transition-shadow duration-300 hover:shadow-soft-lg" : ""} ${className}`}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
       style={{ transformStyle: "preserve-3d", willChange: "transform" }}

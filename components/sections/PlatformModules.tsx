@@ -8,6 +8,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { platform } from "@/lib/content/homepage";
 import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const cardSpring = { type: "spring" as const, stiffness: 300, damping: 28, mass: 0.8 };
@@ -23,7 +24,7 @@ export function PlatformModules() {
 
   return (
     <SectionCursor>
-      <Section id="platform" background="cream" mesh fullBleed className="!pt-24 md:!pt-32 lg:!pt-40">
+      <Section id="platform" background="surface" fullBleed className="!pt-24 md:!pt-32 lg:!pt-40">
         <FullBleed>
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-medium tracking-wide text-primary uppercase">
@@ -50,6 +51,7 @@ export function PlatformModules() {
             {platform.modules.map((mod, index) => {
               const Icon = mod.icon;
               const offset = entryOffsets[index % 3];
+              const moduleNumber = String(index + 1).padStart(2, "0");
 
               return (
                 <motion.div
@@ -78,22 +80,36 @@ export function PlatformModules() {
                   }
                 >
                   <CursorZone variant="explore" className="h-full">
-                    <TiltCard className="h-full">
+                    <TiltCard className="h-full" hoverShadow={false}>
                       <Link
                         href={mod.href}
-                        className="group flex h-full min-h-[220px] flex-col rounded-2xl border border-rule bg-surface p-6 shadow-soft transition-shadow hover:shadow-soft-lg sm:p-8"
+                        className="group relative flex h-full min-h-[240px] flex-col overflow-hidden rounded-2xl border border-rule bg-surface p-6 sm:p-8"
                       >
-                        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary">
+                        <span
+                          className="pointer-events-none absolute right-5 bottom-5 font-display text-4xl font-medium text-ink/4 sm:text-5xl"
+                          aria-hidden
+                        >
+                          {moduleNumber}
+                        </span>
+
+                        <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-rule bg-surface text-ink-mid transition-transform duration-300 group-hover:scale-105">
                           <Icon size={22} strokeWidth={1.5} />
                         </div>
-                        <h3 className="mt-5 font-display text-xl font-medium text-ink">
+
+                        <h3 className="relative mt-5 font-display text-xl font-medium text-ink transition-colors duration-300 group-hover:text-ink-soft">
                           {mod.name}
                         </h3>
-                        <p className="mt-3 flex-1 text-[15px] leading-relaxed text-ink-faint">
+                        <p className="relative mt-3 flex-1 text-[15px] leading-relaxed text-ink-faint">
                           {mod.description}
                         </p>
-                        <span className="mt-5 text-sm font-medium text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                          Explore →
+
+                        <span className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-ink-mid transition-colors duration-300 group-hover:text-ink">
+                          Explore module
+                          <ArrowRight
+                            size={15}
+                            strokeWidth={2}
+                            className="transition-transform duration-300 group-hover:translate-x-1"
+                          />
                         </span>
                       </Link>
                     </TiltCard>
