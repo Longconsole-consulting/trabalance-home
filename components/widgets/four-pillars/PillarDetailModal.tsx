@@ -3,7 +3,6 @@
 import { fourPillars } from "@/lib/content/homepage";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useId } from "react";
 
 type Pillar = (typeof fourPillars.pillars)[number];
@@ -74,7 +73,7 @@ export function PillarDetailModal({ pillar, onClose }: PillarDetailModalProps) {
             role="dialog"
             aria-modal="true"
             aria-labelledby={titleId}
-            className="relative flex w-full max-h-[min(90vh,880px)] max-w-3xl flex-col overflow-hidden rounded-2xl border border-rule/60 bg-surface lg:max-w-4xl"
+            className="relative flex w-full max-h-[min(90vh,880px)] max-w-3xl flex-col overflow-hidden border border-rule bg-surface lg:max-w-4xl"
             initial={{ opacity: 0, scale: 0.96, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 12 }}
@@ -84,24 +83,14 @@ export function PillarDetailModal({ pillar, onClose }: PillarDetailModalProps) {
             <button
               type="button"
               onClick={onClose}
-              className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center rounded-full border border-rule/60 bg-surface/95 text-ink-faint transition-colors hover:text-ink"
+              className="absolute top-4 right-4 z-10 flex h-8 w-8 items-center justify-center border border-rule bg-surface text-ink-faint transition-colors hover:text-ink"
               aria-label="Close"
             >
               <X size={16} strokeWidth={2} />
             </button>
 
             <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain [-webkit-overflow-scrolling:touch]">
-              <div className="relative aspect-[2/1] bg-surface-2">
-                <Image
-                  src={pillar.media.src}
-                  alt={pillar.media.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 768px, 896px"
-                />
-              </div>
-
-              <div className="px-8 py-8 lg:px-10">
+              <div className="px-8 py-8 lg:px-10 lg:py-10">
                 <p className="text-sm font-medium tracking-wide text-primary uppercase">
                   {pillar.number}
                 </p>
@@ -123,7 +112,7 @@ export function PillarDetailModal({ pillar, onClose }: PillarDetailModalProps) {
                   {pillar.detail.sections.map((section) => (
                     <div
                       key={section.title}
-                      className="border-t border-rule/60 py-6 first:border-t-0 first:pt-0"
+                      className="border-t border-rule py-6 first:border-t-0 first:pt-0"
                     >
                       <h4 className="font-display text-lg font-medium text-ink">
                         {section.title}
