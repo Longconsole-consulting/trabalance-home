@@ -18,6 +18,7 @@
   --c-surface: #ffffff;
   --c-surface-2: #f7f3eb;
   --c-surface-3: #efeadf;
+  --c-light-grey: #f2f4f6;
   --c-rule: #e8e3d7;
   --c-rule-soft: #f1ece2;
 
@@ -55,6 +56,7 @@ html[data-announcement="dismissed"] [data-announcement-bar] {
   --color-surface: var(--c-surface);
   --color-surface-2: var(--c-surface-2);
   --color-surface-3: var(--c-surface-3);
+  --color-light-grey: var(--c-light-grey);
   --color-rule: var(--c-rule);
   --color-rule-soft: var(--c-rule-soft);
   --color-emerald: var(--c-emerald);

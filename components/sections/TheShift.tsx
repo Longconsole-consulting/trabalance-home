@@ -29,7 +29,7 @@ export function TheShift() {
 
           <BentoGrid className="min-h-[480px]">
             <BentoTile colSpan={7} className="min-h-[400px]">
-              <div className="h-full rounded-2xl border border-rule bg-surface-2 p-8 md:p-12 lg:p-16">
+              <div className="h-full rounded-2xl border border-rule bg-light-grey p-8 md:p-12 lg:p-16">
                 <CursorZone variant="explore">
                   <ComparisonWidget mode={mode} onModeChange={setMode} />
                 </CursorZone>
