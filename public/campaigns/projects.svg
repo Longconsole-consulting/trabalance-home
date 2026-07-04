@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Projects illustration">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E6FAF9"/>
+      <stop offset="100%" stop-color="#F2F4F6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="150" y="130" width="500" height="56" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+  <rect x="150" y="210" width="500" height="56" rx="12" fill="#ffffff" stroke="#E5E7EB"/>
+  <rect x="150" y="290" width="500" height="56" rx="12" fill="#ffffff" stroke="#00C4B4" opacity="0.9"/>
+  <rect x="180" y="150" width="140" height="10" rx="5" fill="#0D1F35" opacity="0.12"/>
+  <rect x="180" y="230" width="180" height="10" rx="5" fill="#0D1F35" opacity="0.12"/>
+  <rect x="180" y="310" width="120" height="10" rx="5" fill="#0D1F35" opacity="0.12"/>
+  <rect x="520" y="150" width="90" height="10" rx="5" fill="#00C4B4" opacity="0.35"/>
+  <rect x="520" y="230" width="90" height="10" rx="5" fill="#00C4B4" opacity="0.35"/>
+  <rect x="520" y="310" width="90" height="10" rx="5" fill="#00C4B4"/>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Business numbers illustration">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E6FAF9"/>
+      <stop offset="100%" stop-color="#F2F4F6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <rect x="130" y="110" width="540" height="280" rx="16" fill="#ffffff" stroke="#E5E7EB"/>
+  <polyline points="180,320 260,260 340,280 420,190 520,210 600,150" fill="none" stroke="#00C4B4" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="260" cy="260" r="8" fill="#00C4B4"/>
+  <circle cx="420" cy="190" r="8" fill="#00C4B4"/>
+  <circle cx="600" cy="150" r="8" fill="#00C4B4"/>
+  <rect x="180" y="150" width="160" height="12" rx="6" fill="#0D1F35" opacity="0.12"/>
+  <rect x="180" y="360" width="220" height="10" rx="5" fill="#0D1F35" opacity="0.1"/>
+</svg>

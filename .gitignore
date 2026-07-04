@@ -10,7 +10,33 @@
 !.yarn/releases
 !.yarn/versions
 
-/public
+# Partition commits: public assets (largest → smallest)
+# Uncomment ONE line at a time when ready to commit that folder, then re-comment after commit.
+#
+# 92M
+/public/home/
+# 69M
+/public/approach/
+# 62M
+/public/for-your-team/
+# 60M
+/public/insights/
+# 57M
+/public/videos/
+# 5.7M
+/public/careers/
+# 5.3M
+/public/images/
+# 3.8M
+/public/tools/
+# 1.2M
+/public/about/
+# 332K
+/public/Service_Level_Agreement.pdf
+# Small — commit with code or uncomment individually:
+# 36K — /public/integrations/
+# 28K — /public/logos/
+# 24K — /public/campaigns/
 
 # testing
 /coverage

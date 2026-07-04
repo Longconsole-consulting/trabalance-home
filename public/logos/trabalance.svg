@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 32" role="img" aria-label="Trabalance">
+  <rect x="2" y="8" width="16" height="16" rx="3" fill="#1D4ED8"/>
+  <path fill="#fff" d="M6 12h8v1.5H8.5v5H6V12zm3 0h2v6.5H9V12z"/>
+  <text x="24" y="21" fill="#1D4ED8" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Trabalance</text>
+</svg>

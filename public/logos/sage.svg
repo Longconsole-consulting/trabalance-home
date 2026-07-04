@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 32" role="img" aria-label="Sage">
+  <rect x="2" y="6" width="20" height="20" rx="4" fill="#00D639"/>
+  <path fill="#fff" d="M8 12h8v2h-6v2h5v2H8v-6z"/>
+  <text x="28" y="21" fill="#00D639" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Sage</text>
+</svg>

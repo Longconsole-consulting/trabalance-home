@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 32" role="img" aria-label="Zoho">
+  <rect x="2" y="6" width="20" height="20" rx="4" fill="#E42527"/>
+  <path fill="#fff" d="M8 12h8v2H10v6H8v-8zm4 0h2v8h-2v-8z"/>
+  <text x="28" y="21" fill="#E42527" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Zoho</text>
+</svg>
