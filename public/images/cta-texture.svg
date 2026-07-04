@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" fill="none">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#fff7ed" stroke-width="0.75" opacity="0.35"/>
+    </pattern>
+    <pattern id="lines" width="120" height="120" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)">
+      <line x1="0" y1="20" x2="120" y2="20" stroke="#ffedd5" stroke-width="1" opacity="0.25"/>
+      <line x1="0" y1="60" x2="120" y2="60" stroke="#fed7aa" stroke-width="0.75" opacity="0.2"/>
+      <line x1="0" y1="100" x2="120" y2="100" stroke="#fdba74" stroke-width="0.5" opacity="0.15"/>
+    </pattern>
+    <radialGradient id="fade" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#fff7ed" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#7c2d12" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)"/>
+  <rect width="800" height="600" fill="url(#lines)"/>
+  <rect width="800" height="600" fill="url(#fade)"/>
+</svg>
