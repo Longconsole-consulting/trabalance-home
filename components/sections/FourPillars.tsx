@@ -1,14 +1,13 @@
 "use client";
 
-import { CursorZone } from "@/components/interaction/CursorZone";
 import { SectionCursor } from "@/components/interaction/SectionCursor";
 import { FullBleed } from "@/components/ui/FullBleed";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { PillarDetailModal } from "@/components/widgets/four-pillars/PillarDetailModal";
+import { PillarRowCard } from "@/components/widgets/four-pillars/PillarRowCard";
 import { fourPillars } from "@/lib/content/homepage";
 import { motion, useReducedMotion } from "framer-motion";
-import Image from "next/image";
 import { useState } from "react";
 
 const cardSpring = { type: "spring" as const, stiffness: 280, damping: 26, mass: 0.85 };
@@ -36,7 +35,7 @@ export function FourPillars() {
           </Reveal>
 
           <motion.div
-            className="mx-auto mt-12 max-w-7xl overflow-x-auto lg:mt-16 lg:overflow-hidden"
+            className="mx-auto mt-16 flex max-w-7xl flex-col gap-24 px-4 lg:mt-24 lg:gap-32 lg:px-0 xl:gap-40"
             initial={prefersReducedMotion ? false : "hidden"}
             whileInView={prefersReducedMotion ? undefined : "visible"}
             viewport={{ once: true, margin: "-80px" }}
@@ -47,11 +46,9 @@ export function FourPillars() {
               },
             }}
           >
-            <div className="flex min-w-max snap-x snap-mandatory gap-4 px-4 sm:gap-5 lg:grid lg:min-w-0 lg:grid-cols-4 lg:gap-6 lg:px-0">
             {fourPillars.pillars.map((pillar) => (
               <motion.div
                 key={pillar.title}
-                className="w-[220px] shrink-0 snap-start sm:w-[240px] lg:w-auto lg:min-w-0"
                 variants={
                   prefersReducedMotion
                     ? undefined
@@ -72,46 +69,12 @@ export function FourPillars() {
                       }
                 }
               >
-                <CursorZone variant="click" className="h-full">
-                  <button
-                    type="button"
-                    className="group relative h-[480px] w-full overflow-hidden rounded-3xl text-left sm:h-[520px] lg:h-[560px]"
-                    onClick={() => setActivePillar(pillar)}
-                  >
-                    <Image
-                      src={pillar.media.src}
-                      alt={pillar.media.alt}
-                      fill
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                      sizes="(max-width: 1024px) 240px, 25vw"
-                    />
-
-                    <div
-                      className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-linear-to-b from-ink/55 to-transparent"
-                      aria-hidden
-                    />
-
-                    <div
-                      className="pointer-events-none absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-ink/65 to-transparent"
-                      aria-hidden
-                    />
-
-                    <div className="absolute inset-x-0 top-0 z-10 px-4 pt-5 sm:px-5 sm:pt-6 lg:px-6">
-                      <h3 className="font-display text-lg font-medium tracking-tight text-white drop-shadow-[0_1px_8px_rgb(10_14_39_/_0.45)] sm:text-xl lg:text-2xl">
-                        {pillar.title}
-                      </h3>
-                    </div>
-
-                    <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-5 sm:px-5 sm:pb-6 lg:px-6">
-                      <p className="text-[12px] leading-relaxed text-white/90 drop-shadow-[0_1px_6px_rgb(10_14_39_/_0.4)] sm:text-[13px]">
-                        {pillar.cardSummary}
-                      </p>
-                    </div>
-                  </button>
-                </CursorZone>
+                <PillarRowCard
+                  pillar={pillar}
+                  onExplore={() => setActivePillar(pillar)}
+                />
               </motion.div>
             ))}
-            </div>
           </motion.div>
         </FullBleed>
       </Section>

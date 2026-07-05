@@ -94,6 +94,12 @@ export function Button(props: ButtonProps) {
     const {
       as: _as,
       type = "button",
+      variant: _variant,
+      size: _size,
+      shape: _shape,
+      showChevron: _showChevron,
+      className: _className,
+      children: _children,
       ...buttonProps
     } = props;
     return (
@@ -103,7 +109,7 @@ export function Button(props: ButtonProps) {
     );
   }
 
-  const { href, ...linkProps } = rest as LinkButtonProps;
+  const { href, as: _as, ...linkProps } = rest as LinkButtonProps;
   return (
     <Link href={href} className={classes} {...linkProps}>
       {content}
