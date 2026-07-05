@@ -861,7 +861,7 @@ export const testimonialsSection = {
   rows: [
     { direction: "left" as const, order: [0, 1, 2, 3, 4, 5] },
     { direction: "right" as const, order: [3, 4, 5, 0, 1, 2] },
-    { direction: "left" as const, order: [5, 0, 1, 2, 3, 4] },
+    // { direction: "left" as const, order: [5, 0, 1, 2, 3, 4] },
   ],
 };
 
