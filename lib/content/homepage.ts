@@ -1,7 +1,6 @@
 import {
   Banknote,
   BarChart3,
-  Building2,
   FileCheck,
   FileText,
   GitBranch,
@@ -256,13 +255,6 @@ export const platform = {
       name: "Stay in control",
       description:
         "Self-keeping books. Country-appropriate tax. Multi-currency and multi-company. Real-time profit, cash and net worth.",
-      href: "#",
-    },
-    {
-      icon: Building2,
-      name: "CRM",
-      description:
-        "All customers and contacts in one place. Track deals from first hello to close. Full history beside their books.",
       href: "#",
     },
   ] as { icon: LucideIcon; name: string; description: string; href: string }[],
