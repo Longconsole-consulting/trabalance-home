@@ -19,7 +19,7 @@ export function PillarRowCard({ pillar, onExplore }: PillarRowCardProps) {
         <p className="text-sm font-medium tracking-wide text-primary uppercase">
           {pillar.number} · {pillar.title}
         </p>
-        <h3 className="mt-5 font-display text-3xl font-medium leading-[1.08] tracking-tight text-ink md:text-4xl lg:mt-6 lg:text-[2.75rem] xl:text-5xl">
+        <h3 className="mt-5 font-display text-2xl font-medium leading-[1.12] tracking-tight text-ink md:text-3xl lg:mt-6 lg:text-[2rem] xl:text-[2.25rem]">
           {pillar.cardTitle}
         </h3>
         <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-ink-mid lg:mt-8 lg:text-lg lg:leading-relaxed">
