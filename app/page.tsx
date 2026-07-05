@@ -23,8 +23,9 @@ export default function Home() {
           <Hero />
           <TestimonialsGrid />
           <PlatformModules />
-          <FourPillars />
+          
           <TheShift />
+          <FourPillars />
           <HowItWorks />
           <IntelligenceLayer />
           <CustomerSpotlight />

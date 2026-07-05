@@ -65,8 +65,8 @@ html[data-announcement="dismissed"] [data-announcement-bar] {
   --color-coral: var(--c-coral);
   --color-pink: var(--c-pink);
   --color-violet: var(--c-violet);
-  --font-sans: var(--font-geist-sans);
-  --font-display: var(--font-newsreader);
+  --font-sans: var(--font-source-sans);
+  --font-display: var(--font-source-serif);
   --shadow-soft: 0 4px 24px -4px rgb(10 14 39 / 0.08);
   --shadow-soft-lg: 0 8px 40px -8px rgb(10 14 39 / 0.12);
   --shadow-glow: 0 20px 60px rgb(65 105 225 / 0.25);
@@ -79,7 +79,7 @@ html {
 body {
   background: var(--c-surface);
   color: var(--c-ink-mid);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-source-sans), system-ui, sans-serif;
   font-size: 15px;
   line-height: 1.6;
 }
@@ -184,7 +184,7 @@ body.custom-cursor-active button {
 }
 
 .font-display {
-  font-family: var(--font-newsreader), Georgia, serif;
+  font-family: var(--font-source-serif), Georgia, serif;
 }
 
 @keyframes marquee {

@@ -20,7 +20,7 @@ export function Hero() {
         className="!pb-8 !pt-[calc(7rem+var(--site-banner-height,0px))] md:!pb-10 md:!pt-[calc(9.5rem+var(--site-banner-height,0px))]"
       >
         <FullBleed className="flex flex-col gap-12 md:gap-16 lg:gap-20">
-          <div className="mx-auto w-full max-w-3xl">
+          <div className="mx-auto w-full max-w-[52rem]">
             <JitterText
               as="h1"
               text={hero.headline}
